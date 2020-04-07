@@ -37,7 +37,7 @@ http_archive(
     name = "com_github_tencent_rapidjson",
     strip_prefix = "rapidjson-1.1.0",
     urls = ["https://github.com/Tencent/rapidjson/archive/v1.1.0.tar.gz"],
-    build_file = "@alpaca_cpp_starter_template//third_party/rapidjson:BUILD",
+    build_file = "@com_github_marpaia_alpaca-trade-api-cpp//third_party/rapidjson:BUILD",
 )
 
 # cpp-httplib is a C++ header-only HTTP/HTTPS server and client library.
@@ -45,7 +45,7 @@ http_archive(
     name = "com_github_yhirose_cpp-httplib",
     strip_prefix = "cpp-httplib-0.5.7",
     urls = ["https://github.com/yhirose/cpp-httplib/archive/v0.5.7.tar.gz"],
-    build_file = "@alpaca_cpp_starter_template//third_party/cpp-httplib:BUILD"
+    build_file = "@com_github_marpaia_alpaca-trade-api-cpp//third_party/cpp-httplib:BUILD"
 )
 
 # BoringSSL is a fork of OpenSSL that is designed to meet Google's needs.
@@ -60,7 +60,7 @@ http_archive(
     name = "com_github_madler_zlib",
     strip_prefix = "zlib-1.2.11",
     urls = ["https://github.com/madler/zlib/archive/v1.2.11.tar.gz"],
-    build_file = "@alpaca_cpp_starter_template//third_party/zlib:BUILD",
+    build_file = "@com_github_marpaia_alpaca-trade-api-cpp//third_party/zlib:BUILD",
 )
 
 # libuv is a multi-platform support library with a focus on asynchronous I/O.
@@ -68,7 +68,7 @@ http_archive(
     name = "com_github_libuv_libuv",
     strip_prefix = "libuv-1.23.2",
     urls = ["https://github.com/libuv/libuv/archive/v1.23.2.tar.gz"],
-    build_file = "@alpaca_cpp_starter_template//third_party/libuv:BUILD",
+    build_file = "@com_github_marpaia_alpaca-trade-api-cpp//third_party/libuv:BUILD",
 )
 
 # uWebsockets is a simple, secure & standards compliant web I/O library.
@@ -76,26 +76,12 @@ http_archive(
     name = "com_github_unetworking_uwebsockets",
     strip_prefix = "uWebSockets-0.14.8",
     urls = ["https://github.com/uNetworking/uWebSockets/archive/v0.14.8.tar.gz"],
-    build_file = "@alpaca_cpp_starter_template//third_party/uwebsockets:BUILD",
+    build_file = "@com_github_marpaia_alpaca-trade-api-cpp//third_party/uwebsockets:BUILD",
 )
 
 # alpaca-trade-api-cpp is a C++ client library for the Alpaca Trading API.
 http_archive(
     name = "com_github_marpaia_alpaca-trade-api-cpp",
-    strip_prefix = "alpaca-trade-api-cpp-master",
-    urls = ["https://github.com/marpaia/alpaca-trade-api-cpp/archive/master.tar.gz"],
+    strip_prefix = "alpaca-trade-api-cpp-0.0.1",
+    urls = ["https://github.com/marpaia/alpaca-trade-api-cpp/archive/v0.0.1.tar.gz"],
 )
-
-# gRPC is a high-performance, open source universal RPC framework
-http_archive(
-    name = "com_github_grpc_grpc",
-    strip_prefix = "grpc-1.28.0-pre3",
-    urls = [
-        "https://github.com/grpc/grpc/archive/v1.28.0-pre3.tar.gz",
-    ],
-)
-
-load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
-grpc_deps()
-load("@com_github_grpc_grpc//bazel:grpc_extra_deps.bzl", "grpc_extra_deps")
-grpc_extra_deps()
