@@ -31,8 +31,8 @@ int main(int argc, char* argv[]) {
   // Print a summary of the currently held positions
   std::cout << "Found " << positions.size() << " positions" << std::endl;
   for (const auto& position : positions) {
-    std::cout << "  - " << position.qty << " shares in " << position.symbol << " worth $" << position.market_value
-              << " each" << std::endl;
+    std::cout << "  - " << position.qty << " shares in " << position.symbol << " worth $" << position.lastday_price
+              << " each / $" << position.market_value << " in total" << std::endl;
   }
 
   return 0;
