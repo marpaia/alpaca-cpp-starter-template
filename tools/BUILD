@@ -13,4 +13,7 @@ cc_binary(
         "@com_github_unetworking_uwebsockets//:uwebsockets",
         "@com_github_yhirose_cpp-httplib//:httplib",
     ],
+    defines = [
+        "NDEBUG",
+    ]
 )
