@@ -11,9 +11,7 @@ ALPACA_DEPS = [
 
 cc_binary(
     name = "view_open_positions",
-    srcs = [
-        "view_open_positions.cpp",
-    ],
+    srcs = ["view_open_positions.cpp"],
     deps = ALPACA_DEPS,
 )
 
